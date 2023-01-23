@@ -13,20 +13,32 @@
       <nav>
         <div class="container">
           <ul class="nav__links">
-            <!-- TODO: ARROW DOWN ICON -->
-            <li class="nav__link">فیلم خارجی</li>
-            <li class="nav__link">فیلم ایرانی</li>
-            <li class="nav__link">سریال</li>
+            <li class="nav__link">
+              فیلم خارجی <i data-feather="chevron-down" class="chevron"></i>
+            </li>
+            <li class="nav__link">
+              فیلم ایرانی <i data-feather="chevron-down" class="chevron"></i>
+            </li>
+            <li class="nav__link">
+              سریال <i data-feather="chevron-down" class="chevron"></i>
+            </li>
             <li class="nav__link">انیمیشن</li>
             <li class="nav__link">دوبله فارسی</li>
             <li class="nav__link">انیمه</li>
           </ul>
+          <!-- MOBILE MENU -->
+          <button class="menu-btn">
+            <i data-feather="menu" class="menu-icon"></i>
+          </button>
           <div class="searchbox">
             <input type="text" placeholder="کلمه مورد نظر" />
-            <!-- TODO: SEARCH ICON -->
+            <i data-feather="search" class="search-icon"></i>
           </div>
         </div>
       </nav>
     </header>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/feather-icons"></script>
   <script defer src="bundle.js"></script></body>
 </html>
