@@ -1,0 +1,78 @@
+@import "./colors";
+@font-face {
+  font-family: "iranSans";
+  src: url("./assets/font/FontsFree-Net-ir_sans.ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "iranSans";
+}
+body {
+  background-color: $primary-bg;
+}
+// HEADER STYLES
+header {
+  max-width: 1100px;
+  margin: 0 auto;
+  // NAV STYLES
+  nav {
+    height: 100px;
+    width: 100%;
+    margin-block: 2rem;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .nav__links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+
+        .nav__link {
+          cursor: pointer;
+          color: $primary-color;
+          font-size: 0.9rem;
+
+          &:hover {
+            color: $secondry-color;
+          }
+        }
+      }
+      // SEARCHBOX STYLES
+      .searchbox {
+        position: relative;
+        width: 250px;
+
+        input {
+          width: 100%;
+          padding: 0.7rem;
+          outline: none;
+          background-color: $searchbox-bg;
+          border: none;
+          border-radius: 5px;
+          color: $secondry-color;
+          font-size: 0.9rem;
+
+          &::placeholder {
+            color: $searchbox-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: "1100px") {
+  header {
+    nav {
+      .container {
+        justify-content: space-around;
+      }
+    }
+  }
+}
