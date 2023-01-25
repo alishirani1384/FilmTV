@@ -12,13 +12,15 @@
 body {
   background-color: $primary-bg;
 }
-// HEADER STYLES
-header {
+@mixin maxCenter() {
   max-width: 1100px;
   margin: 0 auto;
+}
+// HEADER STYLES
+header {
+  @include maxCenter;
   // NAV STYLES
   nav {
-    height: 100px;
     width: 100%;
     margin-block: 1.5rem;
 
@@ -205,6 +207,25 @@ header {
     }
   }
 }
+// MAIN SECTION STYLES
+main {
+  @include maxCenter;
+
+  .top-films {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+
+    .film {
+      cursor: pointer;
+      img {
+        border-radius: 7px;
+        width: 100%;
+      }
+    }
+  }
+}
 
 // JS STYLES
 .toggle {
@@ -247,5 +268,12 @@ header {
   }
   .searchbox {
     display: none;
+  }
+  .top-films {
+    grid-template-columns: repeat(2, 1fr) !important;
+    overflow: auto;
+  }
+  .film img {
+    width: 300px !important;
   }
 }
