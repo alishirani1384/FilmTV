@@ -150,6 +150,7 @@ header {
         background-color: $secondry-bg;
         z-index: 100;
         width: 70%;
+        overflow: auto;
 
         .mobile-links {
           display: flex;
@@ -161,12 +162,40 @@ header {
 
           .mobile-link {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
             cursor: pointer;
             color: $primary-color;
             font-size: 0.9rem;
+            height: 24px;
+            overflow: hidden;
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .mobile-sub {
+              background-color: $primary-bg;
+              padding: 1rem;
+              margin: 1rem 0;
 
+              .mobile-sub-links {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+
+                .mobile-sub-link {
+                  font-size: 0.8rem;
+                  width: 100%;
+                  padding: 0.5rem;
+
+                  &:hover {
+                    background-color: $secondry-bg;
+                  }
+                }
+              }
+            }
             &:hover {
               color: $secondry-color;
             }
@@ -177,6 +206,7 @@ header {
   }
 }
 
+// JS STYLES
 .toggle {
   transform: translateX(0) !important;
   transition: transform 0.3s ease;
@@ -185,10 +215,20 @@ header {
   display: block !important;
   transition: display 0.3s ease;
 }
+.menu-toggle {
+  height: max-content !important;
+}
 
+// MEDAIA QUERIES
 @media screen and (max-width: "1100px") {
   header nav .container {
     justify-content: space-around;
+  }
+  .searchbox {
+    width: fit-content !important;
+  }
+  .searchbox input {
+    display: none;
   }
 }
 @media screen and (max-width: "700px") {
