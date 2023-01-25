@@ -27,6 +27,9 @@ header {
       justify-content: space-between;
       align-items: center;
 
+      .logo img {
+        width: 100px;
+      }
       .nav__links {
         display: flex;
         align-items: center;
@@ -40,9 +43,44 @@ header {
           display: flex;
           align-items: center;
           gap: 0.3rem;
+          position: relative;
 
           &:hover {
             color: $secondry-color;
+            &:hover .sub-menu {
+              display: block;
+            }
+          }
+          // SUB MENU STYLES
+          .sub-menu {
+            background-color: $primary-bg;
+            border-radius: 4px;
+            display: none;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            position: absolute;
+            top: 100%;
+            padding-top: 1rem;
+            width: 250px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.233);
+
+            .sub-links {
+              display: flex;
+              list-style: none;
+              flex-direction: column;
+              gap: 0.5rem;
+
+              .sub-link {
+                display: flex;
+                font-size: 0.8rem;
+                padding: 0.2rem;
+
+                &:hover {
+                  color: white;
+                  background-color: black;
+                }
+              }
+            }
           }
         }
       }
@@ -166,5 +204,8 @@ header {
   }
   .menu-btn {
     display: flex !important;
+  }
+  .searchbox {
+    display: none;
   }
 }
