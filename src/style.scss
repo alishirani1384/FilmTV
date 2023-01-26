@@ -75,7 +75,7 @@ header {
               .sub-link {
                 display: flex;
                 font-size: 0.8rem;
-                padding: 0.2rem;
+                padding: 0.5rem;
 
                 &:hover {
                   color: white;
@@ -213,12 +213,49 @@ main {
 
   .top-films {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     margin: 1rem 0;
 
     .film {
       cursor: pointer;
+      position: relative;
+
+      &:hover .content {
+        transition: opacity 0.4s ease;
+        opacity: 1;
+      }
+      .content {
+        position: absolute;
+        top: 0;
+        bottom: 7px;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.486);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+
+        .title {
+          color: white;
+          font-size: 0.9rem;
+        }
+        .badge {
+          color: yellow;
+          border: 1px solid yellow;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem;
+          font-size: 0.7rem;
+          border-radius: 7px;
+        }
+      }
+
       img {
         border-radius: 7px;
         width: 100%;
@@ -270,7 +307,6 @@ main {
     display: none;
   }
   .top-films {
-    grid-template-columns: repeat(2, 1fr) !important;
     overflow: auto;
   }
   .film img {
