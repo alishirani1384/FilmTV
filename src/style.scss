@@ -180,7 +180,7 @@ header {
   right: 0;
   transform: translateX(2000px);
   background-color: $secondry-bg;
-  z-index: 150;
+  z-index: 151;
   width: 70%;
   overflow: auto;
 
@@ -360,6 +360,85 @@ main {
     }
   }
 }
+.new-movies {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-inline: 1rem;
+  margin-block: 2rem;
+
+  h3 {
+    color: white;
+    padding: 2rem 0;
+  }
+  .movie {
+    background-color: $secondry-bg;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 7px;
+
+    img {
+      border-radius: 7px;
+    }
+    .movie-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .movie-title {
+        color: white;
+        font-size: 1.1rem;
+      }
+      .movie-episode {
+        font-size: 0.9rem;
+        color: gray;
+      }
+      .loved,
+      .ganre,
+      .date,
+      .country {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+      }
+      .loved {
+        color: red;
+      }
+      .ganre {
+        color: white;
+      }
+      .date {
+        color: aqua;
+      }
+      .country {
+        color: cadetblue;
+      }
+    }
+    .download-btn {
+      margin-top: auto;
+      margin-right: auto;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: transparent;
+      border-radius: 7px;
+      border: 2px solid #6898f8;
+      color: #6898f8;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #6898f8;
+        color: white;
+        transition: all 0.3s;
+      }
+    }
+  }
+}
 
 // JS STYLES
 .toggle {
@@ -408,5 +487,28 @@ main {
   }
   .film img {
     width: 300px !important;
+  }
+
+  .new-movies {
+    margin-inline: 0;
+    .movie {
+      display: flex;
+      img {
+        width: 80px;
+        object-fit: cover;
+      }
+      .movie-content {
+        .loved,
+        .date,
+        .country,
+        .ganre {
+          display: none;
+        }
+      }
+      .download-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+      }
+    }
   }
 }
