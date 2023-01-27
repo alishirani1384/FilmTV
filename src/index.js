@@ -4,6 +4,15 @@ const navBtn = document.querySelector(".menu-btn");
 const mobileMenu = document.querySelector(".mobile-menu");
 const overlay = document.querySelector(".overlay");
 const mobileLinks = document.querySelectorAll(".mobile-link div");
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 0) {
+    nav.classList.add("scroll");
+  } else {
+    nav.classList.remove("scroll");
+  }
+});
 
 mobileLinks.forEach((link) => {
   link.addEventListener("click", () => {
